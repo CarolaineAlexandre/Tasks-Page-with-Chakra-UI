@@ -1,49 +1,27 @@
-# Tasks-Page-with-Chakra-UI
+# React + TypeScript + Vite
 
-Página de Tarefas com Chakra UI
-Este é um exemplo de uma simples página de tarefas construída com o Chakra UI, uma biblioteca de componentes para React que facilita a criação de interfaces bonitas e responsivas.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Pré-requisitos
-Antes de começar, certifique-se de que você tenha o Node.js e npm (ou Yarn) instalados em sua máquina.
+Currently, two official plugins are available:
 
-Instalação
-Siga estas etapas para instalar e executar a página de tarefas:
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-Clone o repositório para a sua máquina local:
+## Expanding the ESLint configuration
 
-bash
-Copy code
-git clone https://github.com/seu-usuario/pagina-de-tarefas.git
-Navegue até o diretório do projeto:
+If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-bash
-Copy code
-cd pagina-de-tarefas
-Instale as dependências:
+- Configure the top-level `parserOptions` property like this:
 
-bash
-Copy code
-npm install
-# ou
-yarn install
-Inicie a aplicação:
+```js
+   parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+    project: ['./tsconfig.json', './tsconfig.node.json'],
+    tsconfigRootDir: __dirname,
+   },
+```
 
-bash
-Copy code
-npm start
-# ou
-yarn start
-A página de tarefas estará disponível em http://localhost:3000.
-
-
-Contribuição
-Se você deseja contribuir para a página de tarefas, siga estas etapas:
-
-Faça um fork do repositório.
-Crie uma nova branch com a sua feature: git checkout -b minha-feature
-Faça commit das suas mudanças: git commit -m 'Adicione uma nova feature'
-Faça push para a branch: git push origin minha-feature
-Envie um Pull Request.
-
-Licença
-Este projeto está licenciado sob a MIT License.
+- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
+- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
+- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
